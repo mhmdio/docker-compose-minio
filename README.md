@@ -8,6 +8,7 @@ Distributed instances are now accessible on the host at ports 9000, proceed to a
 
 ```bash
 brew install minio/stable/mc
+mc --autocompletion # Shell autocompletion
 ```
 
 ## Install MinIO Stack
