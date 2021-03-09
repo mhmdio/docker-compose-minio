@@ -12,6 +12,7 @@ services:
       CONSOLE_PBKDF_PASSPHRASE=SECRET: SECRET
       CONSOLE_PBKDF_SALT: SECRET
       CONSOLE_MINIO_SERVER: http://nginx:9000
+    command: server
 
   minio1:
     image: minio/minio:RELEASE.2021-03-04T00-53-13Z
