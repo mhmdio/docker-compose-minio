@@ -1,17 +1,37 @@
 # MinIO Docker Compose
 
+![stack](./docs/stack.svg)
+
 Deploy MinIO on Docker Compose.
 
-Distributed instances are now accessible on the host at ports 9000, proceed to access the Web browser at <http://127.0.0.1:9000/>. Here 4 MinIO server instances are reverse proxied through Nginx load balancing.
+Distributed instances are accessible on the host at ports 9000, proceed to access the Web browser at <http://127.0.0.1:9000/> and <http://127.0.0.1:9090/>. Here 4 MinIO server instances are reverse proxied through Nginx load balancing.
+
+## MinIO Console
+
+A graphical user interface for MinIO <https://github.com/minio/console>
+
 
 ## Install MinIO Client
 
 ```bash
+# macOS
 brew install minio/stable/mc
 mc --autocompletion # Shell autocompletion
+
+# Docker
+# alias mc="docker run minio/mc"
+docker pull minio/mc
+docker run minio/mc admin info play
 ```
 
 ## Install MinIO Stack
+
+- nginx
+- console
+- minio1
+- minio2
+- minio3
+- minio4
 
 ```bash
 docker-compose pull
@@ -84,3 +104,8 @@ mc ls mac
 mc mb mac/test-mc-client
 # Bucket created successfully `mac/test-mc-client`.
 ```
+
+## Access UIs
+
+- console UI: <http://localhost:9090>
+- MinIO UI: <http://localhost:9000>
